@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Behave",
+            "type": "python",
+            "request": "launch",
+            "program": "C:/SeleniumPython/.venv/Lib/site-packages/behave/__main__.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "args": ["--Scenarioname"],
+            "justMyCode": false
+        }
+    ]
+}
