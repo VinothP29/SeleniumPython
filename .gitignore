@@ -1,0 +1,9 @@
+#Byte-compiled / optimized  / DLL files
+__pycache___/
+*.py[cod]
+
+.venv/
+.idea/
+logs/
+.vscode/
+.cucumber+/
