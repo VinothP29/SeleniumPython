@@ -1,3 +1,4 @@
 behave
 selenium
 pylint
+webdriver_manager
