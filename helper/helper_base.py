@@ -34,10 +34,10 @@ class _ElementType(Enum):
     DESKTOP=3
 
 class HelperFunction():
-    default_wait = 30
 
     def __init__(self, context):
         self.context = context
+        self.driver_wait = WebDriverWait(self.context.driver, 30)
 
     def open(self, url):
         self.context.driver.get(url)
@@ -50,11 +50,11 @@ class HelperFunction():
 
     # Helper functions that are used to identify the web locators in Selenium Python tutorial  
  
-    # def find_by_xpath(self, xpath):
-    #     return self.context.driver_wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))
+    def find_by_xpath(self, xpath):
+        return self.driver_wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))
  
-    # def find_by_name(self, name):
-    #     return self.context.driver_wait.until(EC.visibility_of_element_located((By.NAME, name)))
+    def find_by_name(self, name):
+        return self.driver_wait.until(EC.visibility_of_element_located((By.NAME, name)))
  
-    # def find_by_id(self, id):
-    #     return self.context.driver_wait.until(EC.visibility_of_element_located((By.ID, id))) 
+    def find_by_id(self, id):
+        return self.driver_wait.until(EC.visibility_of_element_located((By.ID, id))) 

@@ -1,7 +1,12 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
  
 def get_browser(browser):
     if browser == "chrome":
-        driver = webdriver.Chrome()
+        options = Options()
+        options.headless = False
+        driver = webdriver.Chrome(ChromeDriverManager('latest').install(), chrome_options=options)
         driver.maximize_window()
+        driver.get("https://opensource-demo.orangehrmlive.com/")
         return driver
