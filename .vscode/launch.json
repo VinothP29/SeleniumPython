@@ -8,7 +8,7 @@
             "program": "C:/SeleniumPython/.venv/Lib/site-packages/behave/__main__.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "args": ["--Scenarioname"],
+            "args": ["--name=Verify a valid user is able to login successfully"],
             "justMyCode": false
         }
     ]
