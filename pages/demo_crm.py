@@ -5,6 +5,7 @@ class DemoCRM(HelperFunction):
 
     homepage_field = "txt%s"
     login = "btnLogin"
+    invalid_credential = "//span[text()='Invalid credentials']"
 
     def verify_homepage_launch(self):
         title = self.context.driver.title
@@ -17,4 +18,8 @@ class DemoCRM(HelperFunction):
 
     def verify_user_login(self):
         if self.find_by_id("menu_dashboard_index"):
+            return True
+    
+    def verify_invalid_credential_message(self):
+        if self.find_by_xpath(self.invalid_credential):
             return True
