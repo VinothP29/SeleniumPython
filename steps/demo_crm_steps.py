@@ -19,3 +19,12 @@ def click_login(context):
 def verify_login(context):
     logged_in = DemoCRM(context).verify_user_login()
     assert logged_in == True
+
+@then('I verify invalid credentials alert is displayed')
+def verify_invalid_credential_alert(context):
+    message_displayed = DemoCRM(context).verify_invalid_credential_message()
+    assert message_displayed == True
+
+@when('I click on "{tab_name}" tab')
+def click_tab(context, tab_name):
+    DemoCRM(context).click_on_tab(tab_name)
