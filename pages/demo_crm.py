@@ -6,6 +6,7 @@ class DemoCRM(HelperFunction):
     homepage_field = "txt%s"
     login = "btnLogin"
     invalid_credential = "//span[text()='Invalid credentials']"
+    module_name = "//a[contains(@id,'view%sModule')]"
 
     def verify_homepage_launch(self):
         title = self.context.driver.title
@@ -23,3 +24,5 @@ class DemoCRM(HelperFunction):
     def verify_invalid_credential_message(self):
         if self.find_by_xpath(self.invalid_credential):
             return True
+
+    click_on_tab = lambda self, tab_name: self.find_by_xpath(self.module_name % tab_name).click()
