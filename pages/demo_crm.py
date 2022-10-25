@@ -3,10 +3,11 @@ from helper.helper_base import HelperFunction
 
 class DemoCRM(HelperFunction):
 
-    homepage_field = "txt%s"
-    login = "btnLogin"
-    invalid_credential = "//span[text()='Invalid credentials']"
-    module_name = "//a[contains(@id,'view%sModule')]"
+    homepage_field = "%s"
+    login = "//button[text()=' Login ']"
+    invalid_credential = "//p[text()='Invalid credentials']"
+    module_name = "//span[text()='%s']/parent::a"
+    employee_information = "//h5[text()='Employee Information']"
 
     def verify_homepage_launch(self):
         title = self.context.driver.title
@@ -15,10 +16,10 @@ class DemoCRM(HelperFunction):
     def enter_fieldvalue(self, field, value):
         self.find_by_name(self.homepage_field % field).send_keys(value)
 
-    click_login_button = lambda self: self.find_by_id(self.login).click()
+    click_login_button = lambda self: self.find_by_xpath(self.login).click()
 
     def verify_user_login(self):
-        if self.find_by_id("menu_dashboard_index"):
+        if self.find_by_xpath(self.employee_information):
             return True
     
     def verify_invalid_credential_message(self):
