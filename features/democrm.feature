@@ -7,17 +7,17 @@ Feature: OrangeHRM
   Scenario: Verify a valid user is able to login successfully
      When I enter the below credential in crm login page
       | fieldname | fieldvalue | 
-      | Username  | Admin      | 
-      | Password  | admin123   | 
+      | username  | Admin      | 
+      | password  | admin123   | 
       And I click login button
      Then I verify user is logged in successfully
   
   @invalid_login
-  Scenario: Verify user is not able to login with invalid Password
+  Scenario: Verify user is not able to login with invalid password
      When I enter the below credential in crm login page
       | fieldname | fieldvalue | 
-      | Username  | Admin      | 
-      | Password  | admin      | 
+      | username  | Admin      | 
+      | password  | admin      | 
       And I click login button
      Then I verify invalid credentials alert is displayed
 
@@ -25,8 +25,8 @@ Feature: OrangeHRM
   Scenario: Verify admin is able to create new user
      When I enter the below credential in crm login page
       | fieldname | fieldvalue | 
-      | Username  | Admin      | 
-      | Password  | admin123   | 
+      | username  | Admin      | 
+      | password  | admin123   | 
       And I click login button
      Then I verify user is logged in successfully
      When I click on "Admin" tab
